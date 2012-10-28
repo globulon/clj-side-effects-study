@@ -1,4 +1,4 @@
 clj-side-effects-study
 ======================
 
-study of side effects cobta usng clojure web apps
+study of side effects while using clojure web apps
