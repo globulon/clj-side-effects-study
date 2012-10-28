@@ -7,7 +7,8 @@
             [ring.middleware.reload :as reload]
             [ring.middleware.session :as session]
             [ring.middleware.params :as params]
-            [ring.util.response :as response]))
+            [ring.util.response :as response]
+            [com.promindis.study.commons.persistence :as db]))
 
 (defn registration-page [req]
   (hiccup/html
@@ -32,7 +33,7 @@
                 (form/submit-button "Submit")])]]))
 
 (defn registration-successful [req]
-  (let [first-name (get-in req [:params "first-name"])]
+  (let [first-name (get-in req [:query-params "first-name"])]
     (hiccup/html 
       [:div 
         (str "Registration done " first-name)])))
